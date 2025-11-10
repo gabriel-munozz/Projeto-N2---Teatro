@@ -35,6 +35,7 @@ public class main{
             
             default: 
                 System.out.println("Opção Inválida!");
+            }
         } while (opcao != 4);
 
     }
