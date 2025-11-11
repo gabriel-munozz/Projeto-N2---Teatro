@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class main{
     public static void main(String [] args){
+        teatro teatro = new teatro();
         Scanner entrada = new Scanner(System.in);
 
         int opcao = 0;
@@ -18,15 +19,15 @@ public class main{
             switch (opcao) {
             
             case 1:
-                
+                teatro.cadastrarEspetaculo();
                 break;
             
             case 2:
-                
+                teatro.cadastrarCliente();
                 break;
 
             case 3:
-                
+                teatro.novaCompra();
                 break;
 
             case 4:

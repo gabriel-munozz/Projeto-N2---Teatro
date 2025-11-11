@@ -5,4 +5,5 @@ public class entradaMeia extends entrada {
 
     public double calculaValor(double precoBase) {
         return precoBase * 0.5;
+    }
 }
