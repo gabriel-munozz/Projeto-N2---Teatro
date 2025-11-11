@@ -42,6 +42,6 @@ public class espetaculo {
     }
 
     public void mostrarEspetaculo() {
-        System.out.printf("%s - %s %s - R$%.2f%n", nome, data, hora, preco);
+        System.out.printf("%s | %s | %s | R$%.2f%n", nome, data, hora, preco);
     }
 }

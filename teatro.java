@@ -41,7 +41,7 @@ public class teatro {
 
         System.out.println("\n*** VENDA DE ENTRADAS - ESPETÁCULOS ***");
         for (int i = 0; i < espetaculos.size(); i++) {
-            System.out.printf("%d. ", (i + 1));
+            System.out.printf("%d.", (i + 1));
             espetaculos.get(i).mostrarEspetaculo();
         }
 
