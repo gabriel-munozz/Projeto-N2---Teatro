@@ -1,6 +1,6 @@
 public class entradaMeia extends entrada {
     public entradaMeia(int numeroDoAssento) {
-        this.numeroDoAssento = numeroDoAssento;
+        super(numeroDoAssento);
     }
 
     public double calculaValor(double precoBase) {

@@ -1,8 +1,6 @@
 public abstract class entrada {
     protected int numeroDoAssento;
 
-    public entrada() {}
-
     public entrada(int numeroDoAssento) {
         this.numeroDoAssento = numeroDoAssento;
     }

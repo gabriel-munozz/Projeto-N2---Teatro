@@ -1,18 +1,21 @@
-import java.util.ArrayList;
-
 public class pedido {
-    private ArrayList<entrada> entradas = new ArrayList<>();
+    private entrada[] entradas = new entrada[50];
+    private int qtdEntradas = 0;
 
-    public void adicionaEntrada(entrada entrada) {
-        entradas.add(entrada);
+    public void adicionaEntrada(entrada novaEntrada) {
+        if (qtdEntradas < entradas.length) {
+            entradas[qtdEntradas] = novaEntrada;
+            qtdEntradas++;
+        } else {
+            System.out.println("Limite máximo de entradas atingido!");
+        }
     }
 
     public double calculaValorTotal(double precoBase) {
         double total = 0;
-        for (entrada e : entradas) {
-            total += e.calculaValor(precoBase);
+        for (int i = 0; i < qtdEntradas; i++) {
+            total += entradas[i].calculaValor(precoBase);
         }
         return total;
     }
 }
-

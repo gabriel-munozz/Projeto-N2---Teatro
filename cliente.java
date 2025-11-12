@@ -1,9 +1,8 @@
-import java.util.ArrayList;
-
 public class cliente {
     private String nome;
     private String cpf;
-    private ArrayList<pedido> pedidos = new ArrayList<>();
+    private pedido[] pedidos = new pedido[50];
+    private int qtdPedidos = 0;
 
     public cliente(String nome, String cpf) {
         this.nome = nome;
@@ -18,11 +17,16 @@ public class cliente {
         return cpf;
     }
 
-    public void adicionaPedido(pedido pedido) {
-        pedidos.add(pedido);
+    public void adicionaPedido(pedido novoPedido) {
+        if (qtdPedidos < pedidos.length) {
+            pedidos[qtdPedidos] = novoPedido;
+            qtdPedidos++;
+        } else {
+            System.out.println("Limite máximo de pedidos atingido para este cliente!");
+        }
     }
 
-    public String toString() {
-        return nome + " (CPF: " + cpf + ")";
+    public void mostrarCliente() {
+    System.out.printf("Cliente: %s | CPF: %s%n", nome, cpf);
     }
 }
