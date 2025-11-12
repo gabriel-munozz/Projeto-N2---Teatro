@@ -19,7 +19,7 @@ public class teatro {
         entrada.nextLine();
 
         espetaculos.add(new espetaculo(nome, data, hora, preco));
-        System.out.println("Espetáculo cadastrado com sucesso!");
+        System.out.println("Espetáculo cadastrado com sucesso!\n");
     }
 
     public void cadastrarCliente() {
@@ -30,7 +30,7 @@ public class teatro {
         String cpf = entrada.nextLine();
 
         clientes.add(new cliente(nome, cpf));
-        System.out.println("Cliente cadastrado com sucesso!");
+        System.out.println("Cliente cadastrado com sucesso!\n");
     }
 
     public void novaCompra() {
@@ -89,7 +89,8 @@ public class teatro {
 
         cli.adicionaPedido(pedido);
         double total = pedido.calculaValorTotal(esp.getPreco());
-        System.out.printf("Valor Total: R$ %.2f%n", total);
+
+        System.out.printf("Valor Total: R$ %.2f\n", total);
     }
 
     private cliente buscarClientePorCpf(String cpf) {
