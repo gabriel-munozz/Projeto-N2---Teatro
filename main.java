@@ -1,3 +1,8 @@
+/* Grupo: Gabriel Machado Palacios Muñoz RA: 10737221
+          Gabriel Vacela Pereira RA: 10735636       
+          Lucas Omine RA: 10402530  
+*/
+
 import java.util.Scanner;
 
 public class main{
