@@ -1,5 +1,5 @@
-public class entradaInteira extends entrada {
-    public entradaInteira(int numeroDoAssento) {
+public class EntradaInteira extends Entrada {
+    public EntradaInteira(int numeroDoAssento) {
         super(numeroDoAssento); 
     }
 

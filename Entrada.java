@@ -1,7 +1,7 @@
-public abstract class entrada {
-    protected int numeroDoAssento;
+public abstract class Entrada {
+    private int numeroDoAssento;
 
-    public entrada(int numeroDoAssento) {
+    public Entrada(int numeroDoAssento) {
         this.numeroDoAssento = numeroDoAssento;
     }
 

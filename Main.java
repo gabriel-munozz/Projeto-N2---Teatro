@@ -2,12 +2,11 @@
           Gabriel Vacela Pereira RA: 10735636       
           Lucas Omine RA: 10402530  
 */
-
 import java.util.Scanner;
 
-public class main{
+public class Main{
     public static void main(String [] args){
-        teatro teatro = new teatro();
+        Teatro teatro = new Teatro();
         Scanner entrada = new Scanner(System.in);
 
         int opcao = 0;

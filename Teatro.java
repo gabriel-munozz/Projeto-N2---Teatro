@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class teatro {
-    private ArrayList<espetaculo> espetaculos = new ArrayList<>();
-    private ArrayList<cliente> clientes = new ArrayList<>();
+public class Teatro {
+    private ArrayList<Espetaculo> espetaculos = new ArrayList<>();
+    private ArrayList<Cliente> clientes = new ArrayList<>();
     private Scanner entrada = new Scanner(System.in);
 
     public void cadastrarEspetaculo() {
@@ -18,7 +18,7 @@ public class teatro {
         double preco = entrada.nextDouble();
         entrada.nextLine();
 
-        espetaculos.add(new espetaculo(nome, data, hora, preco));
+        espetaculos.add(new Espetaculo(nome, data, hora, preco));
         System.out.println("Espetáculo cadastrado com sucesso!\n");
     }
 
@@ -29,7 +29,7 @@ public class teatro {
         System.out.print("CPF: ");
         String cpf = entrada.nextLine();
 
-        clientes.add(new cliente(nome, cpf));
+        clientes.add(new Cliente(nome, cpf));
         System.out.println("Cliente cadastrado com sucesso!\n");
     }
 
@@ -54,8 +54,8 @@ public class teatro {
             return;
         }
 
-        espetaculo esp = espetaculos.get(escolha - 1);
-        pedido pedido = new pedido();
+        Espetaculo esp = espetaculos.get(escolha - 1);
+        Pedido pedido = new Pedido();
         boolean continuar = true;
 
         while (continuar) {
@@ -71,7 +71,7 @@ public class teatro {
             int tipo = entrada.nextInt();
             entrada.nextLine();
 
-            entrada novaEntrada = esp.novaEntrada(tipo, assento);
+            Entrada novaEntrada = esp.novaEntrada(tipo, assento);
             pedido.adicionaEntrada(novaEntrada);
 
             System.out.print("Deseja comprar outra entrada (S/N)? ");
@@ -81,7 +81,7 @@ public class teatro {
 
         System.out.print("Informe o CPF do cliente: ");
         String cpf = entrada.nextLine();
-        cliente cli = buscarClientePorCpf(cpf);
+        Cliente cli = buscarClientePorCpf(cpf);
         if (cli == null) {
             System.out.println("Cliente não encontrado!");
             return;
@@ -93,8 +93,8 @@ public class teatro {
         System.out.printf("Valor Total: R$ %.2f\n", total);
     }
 
-    private cliente buscarClientePorCpf(String cpf) {
-        for (cliente c : clientes) {
+    private Cliente buscarClientePorCpf(String cpf) {
+        for (Cliente c : clientes) {
             if (c.getCpf().equals(cpf)) return c;
         }
         return null;

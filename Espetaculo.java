@@ -1,11 +1,11 @@
-public class espetaculo {
+public class Espetaculo {
     private String nome;
     private String data;
     private String hora;
     private double preco;
     private boolean[] assentos = new boolean[50];
 
-    public espetaculo(String nome, String data, String hora, double preco) {
+    public Espetaculo(String nome, String data, String hora, double preco) {
         this.nome = nome;
         this.data = data;
         this.hora = hora;
@@ -22,9 +22,14 @@ public class espetaculo {
 
     public void apresentaAssentos() {
         for (int i = 49; i >= 0; i--) {
-            if (assentos[i]) System.out.print("XX ");
-            else System.out.printf("%02d ", i + 1);
-            if (i % 10 == 0) System.out.println();
+            if (assentos[i]){
+                System.out.print("XX ");
+            }else {
+                System.out.printf("%02d ", i + 1);
+            }
+            if (i % 10 == 0){ 
+                System.out.println();
+            }
         }
     }
 
@@ -33,12 +38,19 @@ public class espetaculo {
             assentos[assento - 1] = true;
     }
 
-    public entrada novaEntrada(int tipo, int assento) {
-        marcarAssento(assento);
-        if (tipo == 1) return new entradaInteira(assento);
-        if (tipo == 2) return new entradaMeia(assento);
-        if (tipo == 3) return new entradaProfessor(assento);
-        return null;
+    public Entrada novaEntrada(int tipo, int assento) {
+    marcarAssento(assento);
+
+    switch (tipo) {
+        case 1:
+            return new EntradaInteira(assento);
+        case 2:
+            return new EntradaMeia(assento);
+        case 3:
+            return new EntradaProfessor(assento);
+        default:
+            return null;
+        }
     }
 
     public void mostrarEspetaculo() {
